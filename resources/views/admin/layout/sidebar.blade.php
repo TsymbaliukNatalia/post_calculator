@@ -2,6 +2,8 @@
     <nav class="sidebar-nav">
         <ul class="nav">
             <li class="nav-title">{{ trans('brackets/admin-ui::admin.sidebar.content') }}</li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('admin/new-post-calculator') }}"><i
+                        class="nav-icon fa fa-calculator"></i>{{ trans('post-calculator.title') }}</a></li>
             {{-- Do not delete me :) I'm used for auto-generation menu items --}}
 
             <li class="nav-title">{{ trans('brackets/admin-ui::admin.sidebar.settings') }}</li>
