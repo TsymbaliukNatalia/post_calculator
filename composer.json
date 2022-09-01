@@ -5,7 +5,7 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^7.4|^8.0",
         "brackets/craftable": "^7.0",
         "daaner/novaposhta": "^0.75.0",
         "fruitcake/laravel-cors": "^2.0",

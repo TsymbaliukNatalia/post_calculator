@@ -42,6 +42,7 @@ class AdminUsersController extends Controller
      */
     public function __construct()
     {
+        parent::__construct();
         $this->guard = config('admin-auth.defaults.guard');
     }
 

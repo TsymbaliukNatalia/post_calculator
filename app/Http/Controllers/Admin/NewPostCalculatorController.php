@@ -3,13 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Services\NewPostService;
+use Daaner\NovaPoshta\Models\Address;
 use Illuminate\Contracts\View\Factory;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rule;
-use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Application;
 use Illuminate\View\View;
 
 class NewPostCalculatorController extends Controller
@@ -25,6 +22,7 @@ class NewPostCalculatorController extends Controller
 
     public function __construct()
     {
+        parent::__construct();
         $this->guard = config('admin-auth.defaults.guard');
     }
 
@@ -33,6 +31,9 @@ class NewPostCalculatorController extends Controller
      */
     public function index()
     {
+        $cities = NewPostService::getCitiesList($this->perPage, $this->page);
+
+        dd($cities);
         return view('admin.new-post-calculator.index');
     }
 }
