@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Dictionary\CitiesDictionary;
 use App\Http\Controllers\Controller;
 use App\Services\NewPostService;
 use Daaner\NovaPoshta\Models\Address;
@@ -32,12 +33,10 @@ class NewPostCalculatorController extends Controller
      */
     public function index()
     {
-        $cities = NewPostService::getCitiesList($this->perPage, $this->page);
+        $cities = CitiesDictionary::getCitiesList();
         $serviceTypes =  NewPostService::getServiceTypesList();
         $cargoTypes =  NewPostService::getCargoTypesList();
 
-//
-//        dd($serviceTypes);
         return view('admin.new-post-calculator.index', [
             'cities' => json_encode($cities),
             'serviceTypes' => json_encode($serviceTypes),

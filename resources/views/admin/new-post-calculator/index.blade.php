@@ -43,7 +43,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="form-group row align-items-center"
                      :class="{'has-danger': errors.has('ServiceType'), 'has-success': fields.ServiceType && fields.ServiceType.valid }">
 
