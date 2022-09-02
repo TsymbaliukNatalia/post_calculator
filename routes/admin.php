@@ -18,6 +18,7 @@ Route::prefix('new-post-calculator')->name('new-post-calculator/')->group(
     static function () {
         Route::get('/', [Admin\NewPostCalculatorController::class, 'index'])->name('show-new-post-calculator');
         Route::get('/search-cities', [Admin\NewPostCalculatorController::class, 'searchCities'])->name('search-cities');
+        Route::post('/calculate', [Admin\NewPostCalculatorController::class, 'calculate'])->name('calculate');
     }
 );
 

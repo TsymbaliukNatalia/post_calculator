@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Dictionary\CitiesDictionary;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\NewPostCalculator\Calculate;
 use App\Services\NewPostService;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Foundation\Application;
@@ -35,8 +36,8 @@ class NewPostCalculatorController extends Controller
     public function index()
     {
         $cities = CitiesDictionary::getCitiesList();
-        $serviceTypes =  NewPostService::getServiceTypesList();
-        $cargoTypes =  NewPostService::getCargoTypesList();
+        $serviceTypes = NewPostService::getServiceTypesList();
+        $cargoTypes = NewPostService::getCargoTypesList();
 
         return view('admin.new-post-calculator.index', [
             'cities' => json_encode($cities),
@@ -50,14 +51,33 @@ class NewPostCalculatorController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function searchCities(Request $request) : JsonResponse
+    public function searchCities(Request $request): JsonResponse
     {
-        if (!isset($request->name)){
+        if (!isset($request->name)) {
             $cities = CitiesDictionary::getCitiesList();
         } else {
             $cities = NewPostService::searchCitiesList($request->name) ?? [];
         }
 
         return Response::json($cities);
+    }
+
+    /**
+     * @param Calculate $request
+     * @return JsonResponse
+     */
+    public function calculate(Calculate $request): JsonResponse
+    {
+        $methodProperties = [
+            "CitySender" => $request->CitySender['Ref'],
+            "CityRecipient" => $request->CityRecipient['Ref'],
+            "Weight" => "10",
+            "ServiceType" => "WarehouseWarehouse",
+            "Cost" => "300",
+            "CargoType" => "Cargo",
+            "SeatsAmount" => "2",
+        ];
+        $data = NewPostService::calculationShippingCosts($methodProperties);
+        return Response::json($data);
     }
 }

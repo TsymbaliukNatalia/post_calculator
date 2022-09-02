@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Daaner\NovaPoshta\Models\Address;
 use Daaner\NovaPoshta\Models\Common;
+use Daaner\NovaPoshta\NovaPoshta;
 
 class NewPostService
 {
@@ -39,5 +40,19 @@ class NewPostService
         $list = $c->getCargoTypes();
 
         return $list['result'];
+    }
+
+
+    /**
+     * @param array $methodProperties
+     * @return array
+     */
+    public static function calculationShippingCosts(array $methodProperties) : array
+    {
+        $model = 'InternetDocument';
+        $calledMethod = 'getDocumentPrice';
+        $np = new NovaPoshta;
+        $data = $np->getResponse($model, $calledMethod, $methodProperties, $auth = true);
+        return $data;
     }
 }

@@ -11,13 +11,15 @@ Vue.component('new-post-calculator-form', {
     data: function() {
         return {
             form: {
-                CitySender:  '' ,
-                CityRecipient :  '' ,
-                ServiceType : '',
-                CargoType : '',
+                CitySender:  null,
+                CityRecipient :  null,
+                ServiceType : null,
+                CargoType : null,
             },
             senderCitiesLocal: this.senderCities,
             recipientCitiesLocal: this.recipientCities,
+            showCost : false,
+            cost : null,
         }
     },
     methods: {
@@ -41,7 +43,13 @@ Vue.component('new-post-calculator-form', {
             };
 
             getNewCitiesList();
-        }
+        },
+        onSuccess: function onSuccess(data) {
+            if(data.result[0].Cost){
+                this.showCost = true;
+                this.cost = data.result[0].Cost;
+            }
+        },
     },
     mounted() {
         this.form.ServiceType = this.serviceTypes.find(option => option.Description === 'Відділення-Відділення');
