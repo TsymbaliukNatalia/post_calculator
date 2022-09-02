@@ -7,4 +7,13 @@ return [
         'calculate' => 'Розрахувати',
         'clean' => 'Очистити',
     ],
+    'form' => [
+        'route' => 'Маршрут',
+        'city-sender' => 'Місто-відправник',
+        'city-recipient' => 'Місто-одержувач',
+        'city-placeholder' => 'Виберіть місто',
+        'service-type' => 'Тип послуги',
+        'cargo-type' => 'Вид відправлення',
+
+    ]
 ];
