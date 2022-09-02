@@ -22,8 +22,9 @@ class Calculate extends FormRequest
             'ServiceType.Ref' => ['required', 'string'],
             'CargoType' => ['required', 'array'],
             'CargoType.Ref' => ['required', 'string'],
-            'Weigth' => ['required', 'numeric'],
-            'NumberSeats' => ['required', 'integer'],
+            'Weigth' => ['required', 'numeric', 'min:0.1'],
+            'NumberSeats' => ['required', 'integer', 'min:1'],
+            'Cost' => ['required', 'integer', 'min:1'],
 
         ];
     }

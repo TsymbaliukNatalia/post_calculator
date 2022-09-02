@@ -121,6 +121,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <div class="col-2">
+                        <h3>{{ trans("post-calculator.form.cost") }}</h3>
+                    </div>
+                    <div class="col-5" :class="{'has-danger': errors.has(`Cost`) }">
+                        <input type="number" v-model="form.Cost" v-validate="'required'" @input="validate($event)"
+                               class="form-control"
+                               min="1"
+                               :class="{'form-control-danger': errors.has('Cost'), 'form-control-success': fields.Cost && fields.Cost.valid}"
+                               id="Cost" name="Cost" >
+                        <div v-if="errors.has('Cost')" class="form-control-feedback form-text" v-cloak>@{{
+                            errors.first('Cost')
+                            }}
+                        </div>
+                    </div>
+                </div>
 
                 <div>
                     <button type="submit" class="btn btn btn-outline-primary" :disabled="submiting">
@@ -131,7 +147,7 @@
                     </button>
                 </div>
                 <div>
-                    <p class="h2" v-if="showCost"> {{ trans('post-calculator.cost') }} - @{{ cost }} грн</p>
+                    <p class="h2 mt-3" v-if="showCost"> {{ trans('post-calculator.cost') }} - @{{ cost }} грн</p>
                 </div>
             </div>
         </form>

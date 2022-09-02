@@ -17,6 +17,7 @@ Vue.component('new-post-calculator-form', {
                 CargoType : null,
                 Weigth: 0.1,
                 NumberSeats: 1,
+                Cost : 600
             },
             senderCitiesLocal: this.senderCities,
             recipientCitiesLocal: this.recipientCities,
