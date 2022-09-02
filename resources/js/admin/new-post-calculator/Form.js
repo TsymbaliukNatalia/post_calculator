@@ -42,5 +42,9 @@ Vue.component('new-post-calculator-form', {
 
             getNewCitiesList();
         }
+    },
+    mounted() {
+        this.form.ServiceType = this.serviceTypes.find(option => option.Description === 'Відділення-Відділення');
+        this.form.CargoType = this.cargoTypes.find(option => option.Description === 'Посилка');
     }
 });

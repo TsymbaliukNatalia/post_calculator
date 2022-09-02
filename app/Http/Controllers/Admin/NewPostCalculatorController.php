@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Dictionary\CitiesDictionary;
 use App\Http\Controllers\Controller;
 use App\Services\NewPostService;
-use Daaner\NovaPoshta\Models\Address;
-use Daaner\NovaPoshta\Models\Common;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\JsonResponse;

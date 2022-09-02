@@ -56,7 +56,7 @@
                     <div class="col-5">
                         <div>
                             <multiselect v-model="form.ServiceType"
-                                         placeholder="{{trans("placeholders.select_category")}}" :options="serviceTypes"
+                                         placeholder="{{ trans("post-calculator.form.service-type") }}" :options="serviceTypes"
                                          label="Description"
                                          track-by="Ref" open-direction="bottom"></multiselect>
                             <div v-if="errors.has('ServiceType')" class="form-control-feedback form-text" v-cloak>@{{
@@ -71,7 +71,7 @@
                         <h3>{{ trans("post-calculator.form.cargo-type") }}</h3>
                     </div>
                     <div class="col-5">
-                        <multiselect v-model="form.CargoType" placeholder="{{trans("placeholders.select_category")}}"
+                        <multiselect v-model="form.CargoType" placeholder="{{ trans("post-calculator.form.cargo-type") }}"
                                      :options="cargoTypes" label="Description"
                                      track-by="Ref" open-direction="bottom"></multiselect>
                         <div v-if="errors.has('CargoType')" class="form-control-feedback form-text" v-cloak>@{{
