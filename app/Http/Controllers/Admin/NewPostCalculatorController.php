@@ -68,13 +68,14 @@ class NewPostCalculatorController extends Controller
      */
     public function calculate(Calculate $request): JsonResponse
     {
+//        dd($request->ServiceType);
         $methodProperties = [
             "CitySender" => $request->CitySender['Ref'],
             "CityRecipient" => $request->CityRecipient['Ref'],
             "Weight" => "10",
-            "ServiceType" => "WarehouseWarehouse",
+            "ServiceType" => $request->ServiceType['Ref'],
             "Cost" => "300",
-            "CargoType" => "Cargo",
+            "CargoType" => $request->CargoType['Ref'],
             "SeatsAmount" => "2",
         ];
         $data = NewPostService::calculationShippingCosts($methodProperties);

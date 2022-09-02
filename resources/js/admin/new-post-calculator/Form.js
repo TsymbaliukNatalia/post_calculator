@@ -45,6 +45,7 @@ Vue.component('new-post-calculator-form', {
             getNewCitiesList();
         },
         onSuccess: function onSuccess(data) {
+            this.submiting = false;
             if(data.result[0].Cost){
                 this.showCost = true;
                 this.cost = data.result[0].Cost;
