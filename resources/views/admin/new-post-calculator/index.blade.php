@@ -105,6 +105,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <div class="col-2">
+                        <h3>{{ trans("post-calculator.form.number-seats") }}</h3>
+                    </div>
+                    <div class="col-5" :class="{'has-danger': errors.has(`NumberSeats`) }">
+                        <input type="number" v-model="form.NumberSeats" v-validate="'required|integer'" @input="validate($event)"
+                               class="form-control"
+                               min="1"
+                               :class="{'form-control-danger': errors.has('NumberSeats'), 'form-control-success': fields.NumberSeats && fields.NumberSeats.valid}"
+                               id="NumberSeats" name="NumberSeats" >
+                        <div v-if="errors.has('NumberSeats')" class="form-control-feedback form-text" v-cloak>@{{
+                            errors.first('NumberSeats')
+                            }}
+                        </div>
+                    </div>
+                </div>
 
                 <div>
                     <button type="submit" class="btn btn btn-outline-primary" :disabled="submiting">

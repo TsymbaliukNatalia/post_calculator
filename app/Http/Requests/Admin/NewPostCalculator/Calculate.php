@@ -23,6 +23,7 @@ class Calculate extends FormRequest
             'CargoType' => ['required', 'array'],
             'CargoType.Ref' => ['required', 'string'],
             'Weigth' => ['required', 'numeric'],
+            'NumberSeats' => ['required', 'integer'],
 
         ];
     }

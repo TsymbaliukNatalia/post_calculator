@@ -76,7 +76,7 @@ class NewPostCalculatorController extends Controller
             "ServiceType" => $request->ServiceType['Ref'],
             "Cost" => "300",
             "CargoType" => $request->CargoType['Ref'],
-            "SeatsAmount" => "2",
+            "SeatsAmount" =>$request->NumberSeats,
         ];
         $data = NewPostService::calculationShippingCosts($methodProperties);
         return Response::json($data);
