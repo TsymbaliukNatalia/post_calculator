@@ -8,16 +8,13 @@ use Daaner\NovaPoshta\Models\Common;
 class NewPostService
 {
     /**
-     * @param int $limit
-     * @param int $page
+     * @param string $cityName
      * @return array
      */
-    public static function getCitiesList(int $limit, int $page) : array
+    public static function searchCitiesList(string $cityName) : ?array
     {
         $adr = new Address;
-        $adr->setLimit($limit);
-        $adr->setPage($page);
-        $cities = $adr->getCities();
+        $cities = $adr->getCities($cityName);
 
         return $cities['result'];
     }

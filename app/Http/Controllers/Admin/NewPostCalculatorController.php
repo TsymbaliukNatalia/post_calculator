@@ -9,6 +9,9 @@ use Daaner\NovaPoshta\Models\Address;
 use Daaner\NovaPoshta\Models\Common;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Foundation\Application;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use Illuminate\View\View;
 
 class NewPostCalculatorController extends Controller
@@ -42,5 +45,21 @@ class NewPostCalculatorController extends Controller
             'serviceTypes' => json_encode($serviceTypes),
             'cargoTypes' => json_encode($cargoTypes),
         ]);
+    }
+
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function searchCities(Request $request) : JsonResponse
+    {
+        if (!isset($request->name)){
+            $cities = CitiesDictionary::getCitiesList();
+        } else {
+            $cities = NewPostService::searchCitiesList($request->name) ?? [];
+        }
+
+        return Response::json($cities);
     }
 }

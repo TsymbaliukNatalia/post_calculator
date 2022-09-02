@@ -6,7 +6,8 @@
 
     <new-post-calculator-form
         :action="'{{ url('admin/admin-users') }}'"
-        :cities="{{ $cities }}"
+        :sender-cities="{{ $cities }}"
+        :recipient-cities="{{ $cities }}"
         :service-types="{{ $serviceTypes }}"
         :cargo-types="{{ $cargoTypes }}"
 
@@ -20,7 +21,7 @@
                     <label for="city_sender" class="col-form-label text-md-right"
                            :class="isFormLocalized ? 'col-md-2' : 'col-md-1'">{{ trans('admin.investigation.columns.category') }}</label>
                     <div :class="isFormLocalized ? 'col-md-2' : 'col-md-5 col-xl-4'">
-                        <multiselect v-model="form.CitySender" placeholder="{{trans("placeholders.select_category")}}" :options="cities" label="Description"
+                        <multiselect v-model="form.CitySender" @search-change="setCitySenders($event)" placeholder="{{trans("placeholders.select_category")}}" :options="senderCitiesLocal" label="Description"
                                      track-by="Ref" open-direction="bottom"></multiselect>
                         <div v-if="errors.has('CitySender')" class="form-control-feedback form-text" v-cloak>@{{
                             errors.first('CitySender')
@@ -35,7 +36,7 @@
                     <label for="city_recipient" class="col-form-label text-md-right"
                            :class="isFormLocalized ? 'col-md-2' : 'col-md-1'">{{ trans('admin.investigation.columns.category') }}</label>
                     <div :class="isFormLocalized ? 'col-md-2' : 'col-md-5 col-xl-4'">
-                        <multiselect v-model="form.CityRecipient" placeholder="{{trans("placeholders.select_category")}}" :options="cities" label="Description"
+                        <multiselect v-model="form.CityRecipient" @search-change="setCityRecipients($event)" placeholder="{{trans("placeholders.select_category")}}" :options="recipientCitiesLocal" label="Description"
                                      track-by="Ref" open-direction="bottom"></multiselect>
                         <div v-if="errors.has('CityRecipient')" class="form-control-feedback form-text" v-cloak>@{{
                             errors.first('CityRecipient')
