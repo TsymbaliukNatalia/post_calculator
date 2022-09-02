@@ -72,7 +72,7 @@ class NewPostCalculatorController extends Controller
         $methodProperties = [
             "CitySender" => $request->CitySender['Ref'],
             "CityRecipient" => $request->CityRecipient['Ref'],
-            "Weight" => "10",
+            "Weight" => $request->Weigth,
             "ServiceType" => $request->ServiceType['Ref'],
             "Cost" => "300",
             "CargoType" => $request->CargoType['Ref'],

@@ -22,6 +22,7 @@ class Calculate extends FormRequest
             'ServiceType.Ref' => ['required', 'string'],
             'CargoType' => ['required', 'array'],
             'CargoType.Ref' => ['required', 'string'],
+            'Weigth' => ['required', 'numeric'],
 
         ];
     }

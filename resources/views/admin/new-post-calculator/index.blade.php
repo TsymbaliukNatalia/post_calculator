@@ -88,6 +88,23 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <div class="col-2">
+                        <h3>{{ trans("post-calculator.form.weight") }}</h3>
+                    </div>
+                    <div class="col-5" :class="{'has-danger': errors.has(`Weigth`) }">
+                        <input type="number" v-model="form.Weigth" v-validate="'required'" @input="validate($event)"
+                               class="form-control"
+                               min="0.1"
+                               :step="0.1"
+                               :class="{'form-control-danger': errors.has('Weigth'), 'form-control-success': fields.Weigth && fields.Weigth.valid}"
+                               id="Weigth" name="Weigth" >
+                        <div v-if="errors.has('Weigth')" class="form-control-feedback form-text" v-cloak>@{{
+                            errors.first('Weigth')
+                            }}
+                        </div>
+                    </div>
+                </div>
 
                 <div>
                     <button type="submit" class="btn btn btn-outline-primary" :disabled="submiting">
