@@ -24,6 +24,11 @@ class NewPostCalculatorController extends Controller
      */
     protected $guard = 'admin';
 
+    /**
+     * NewPostCalculatorController constructor.
+     *
+     * @return void
+     */
     public function __construct()
     {
         parent::__construct();
@@ -31,6 +36,9 @@ class NewPostCalculatorController extends Controller
     }
 
     /**
+     * Obtaining data to display a page with a calculator
+     * for the cost of cargo delivery by Nova Poshta
+     *
      * @return Application|Factory|View
      */
     public function index()
@@ -48,6 +56,9 @@ class NewPostCalculatorController extends Controller
 
 
     /**
+     * Search for a city by the given term with the name or part of the city name
+     * In the absence of the passed parameter, it returns the default list of cities
+     *
      * @param Request $request
      * @return JsonResponse
      */
@@ -63,6 +74,8 @@ class NewPostCalculatorController extends Controller
     }
 
     /**
+     * Calculation of the cost of delivery based on the transmitted parameters
+     *
      * @param Calculate $request
      * @return JsonResponse
      */

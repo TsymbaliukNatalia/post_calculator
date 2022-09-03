@@ -6,9 +6,14 @@ use Daaner\NovaPoshta\Models\Address;
 use Daaner\NovaPoshta\Models\Common;
 use Daaner\NovaPoshta\NovaPoshta;
 
+/**
+ * Service for interaction with the New post api
+ */
 class NewPostService
 {
     /**
+     * Search cities by name
+     *
      * @param string $cityName
      * @return array
      */
@@ -21,6 +26,8 @@ class NewPostService
     }
 
     /**
+     * Get a list of service types
+     *
      * @return array
      */
     public static function getServiceTypesList() : array
@@ -32,6 +39,8 @@ class NewPostService
     }
 
     /**
+     * Get a list of cargo types
+     *
      * @return array
      */
     public static function getCargoTypesList() : array
@@ -44,6 +53,8 @@ class NewPostService
 
 
     /**
+     * Calculation of the cost of delivery based on the transmitted parameters
+     *
      * @param array $methodProperties
      * @return array
      */

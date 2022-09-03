@@ -32,6 +32,7 @@ Vue.component('new-post-calculator-form', {
         setCityRecipients: function (input) {
             this.setNewCitiesProp(input, 'recipientCitiesLocal');
         },
+        // setting new values for the list of cities according to the passed search parameter
         setNewCitiesProp: function (input, prop) {
             var currentUrl = window.location.pathname;
 
@@ -47,6 +48,7 @@ Vue.component('new-post-calculator-form', {
 
             getNewCitiesList();
         },
+        // display the cost of delivery
         onSuccess: function onSuccess(data) {
             this.submiting = false;
             if(data.result[0].Cost){
@@ -54,6 +56,7 @@ Vue.component('new-post-calculator-form', {
                 this.cost = data.result[0].Cost;
             }
         },
+        // reset form
         reset: function () {
             this.setDefaultServiceTypeValue();
             this.setDefaultCargoTypeValue();
@@ -74,6 +77,7 @@ Vue.component('new-post-calculator-form', {
         }
     },
     mounted() {
+        // set the default parameter values for the form
         this.setDefaultServiceTypeValue();
         this.setDefaultCargoTypeValue();
     }
