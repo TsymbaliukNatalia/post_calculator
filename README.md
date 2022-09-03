@@ -21,6 +21,11 @@ The project was created using Laravel, Laravel 7 NovaPoshta API 2.0, Craftable p
 The main goal of the project is to create an item in the admin panel for calculating the cost of sending cargo by Novaya Poshta </br>
 Link to the menu item in the admin panel - /admin/new-post-calculator
 
-![Alt text](https://github.com/TsymbaliukNatalia/post_calculator/blob/main/storage/images/GithubScreenshots/Screenshot_1.png "Optional title")
-![Alt text](https://github.com/TsymbaliukNatalia/post_calculator/blob/main/storage/images/GithubScreenshots/Screenshot_2.png "Optional title")
-![Alt text](https://github.com/TsymbaliukNatalia/post_calculator/blob/main/storage/images/GithubScreenshots/Screenshot_3.png "Optional title")
+## Screenshots
+
+Main screen
+![Main screen](https://github.com/TsymbaliukNatalia/post_calculator/blob/main/storage/images/GithubScreenshots/Screenshot_1.png "Main screen")
+Search for a city by name
+![Search for a city by name](https://github.com/TsymbaliukNatalia/post_calculator/blob/main/storage/images/GithubScreenshots/Screenshot_2.png "Search for a city by name")
+Display of calculation results
+![Display of calculation results](https://github.com/TsymbaliukNatalia/post_calculator/blob/main/storage/images/GithubScreenshots/Screenshot_3.png "Display of calculation results")
