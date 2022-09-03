@@ -23,9 +23,9 @@ Link to the menu item in the admin panel - /admin/new-post-calculator
 
 ## Screenshots
 
-Main screen
+Main screen </br></br>
 ![Main screen](https://github.com/TsymbaliukNatalia/post_calculator/blob/main/storage/images/GithubScreenshots/Screenshot_1.png "Main screen")
-Search for a city by name
+Search for a city by name </br></br>
 ![Search for a city by name](https://github.com/TsymbaliukNatalia/post_calculator/blob/main/storage/images/GithubScreenshots/Screenshot_2.png "Search for a city by name")
-Display of calculation results
+Display of calculation results</br></br>
 ![Display of calculation results](https://github.com/TsymbaliukNatalia/post_calculator/blob/main/storage/images/GithubScreenshots/Screenshot_3.png "Display of calculation results")
