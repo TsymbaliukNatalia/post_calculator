@@ -142,9 +142,9 @@
                     <button type="submit" class="btn btn btn-outline-primary" :disabled="submiting">
                         {{ trans('post-calculator.buttons.calculate') }}
                     </button>
-                    <button class="btn btn btn-outline-danger" :disabled="submiting">
+                    <span class="btn btn btn-outline-danger" @click="reset" :disabled="submiting">
                         {{ trans('post-calculator.buttons.clean') }}
-                    </button>
+                    </span>
                 </div>
                 <div>
                     <p class="h2 mt-3" v-if="showCost"> {{ trans('post-calculator.cost') }} - @{{ cost }} грн</p>

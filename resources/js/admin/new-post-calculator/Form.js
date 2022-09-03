@@ -54,9 +54,27 @@ Vue.component('new-post-calculator-form', {
                 this.cost = data.result[0].Cost;
             }
         },
+        reset: function () {
+            this.setDefaultServiceTypeValue();
+            this.setDefaultCargoTypeValue();
+            this.form.CitySender = null;
+            this.form.CityRecipient = null;
+            this.form.Weigth = 0.1;
+            this.form.NumberSeats = 1;
+            this.form.Cost = 600;
+            this.showCost = false;
+            this.submiting = false;
+            this.$validator.reset();
+        },
+        setDefaultServiceTypeValue: function () {
+            this.form.ServiceType = this.serviceTypes.find(option => option.Description === 'Відділення-Відділення');
+        },
+        setDefaultCargoTypeValue: function () {
+            this.form.CargoType = this.cargoTypes.find(option => option.Description === 'Посилка');
+        }
     },
     mounted() {
-        this.form.ServiceType = this.serviceTypes.find(option => option.Description === 'Відділення-Відділення');
-        this.form.CargoType = this.cargoTypes.find(option => option.Description === 'Посилка');
+        this.setDefaultServiceTypeValue();
+        this.setDefaultCargoTypeValue();
     }
 });
