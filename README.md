@@ -22,3 +22,5 @@ The main goal of the project is to create an item in the admin panel for calcula
 Link to the menu item in the admin panel - /admin/new-post-calculator
 
 ![Alt text](https://github.com/TsymbaliukNatalia/post_calculator/blob/main/storage/images/GithubScreenshots/Screenshot_1.png "Optional title")
+![Alt text](https://github.com/TsymbaliukNatalia/post_calculator/blob/main/storage/images/GithubScreenshots/Screenshot_2.png "Optional title")
+![Alt text](https://github.com/TsymbaliukNatalia/post_calculator/blob/main/storage/images/GithubScreenshots/Screenshot_3.png "Optional title")
